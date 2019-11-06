@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.vn.introjava;
-import static com.vn.introjava.Ordenamiento.*;
+import static com.vn.introjava.funcionesbasicas.Ordenamiento.*;
 
 /**
  * Clase Principal del proyecto Ejemplos Java
