@@ -25,7 +25,7 @@ public class DatosBasicos {
         System.out.println(unFloat + " " + decimalDoblePrec
                 + " " + cond + " " + caracter + " "
                 + (int) unCharEntero + " " + unCharEntero);
-        String unTexto = "asdoijasdioj";
+        String unTexto = "asdoijasdioj"; 
         System.out.println(unTexto);
         System.out.println("concatenado: " + unTexto.concat("AÑADIDO"));
         System.out.println("En mayusculas: " + unTexto.toUpperCase());
