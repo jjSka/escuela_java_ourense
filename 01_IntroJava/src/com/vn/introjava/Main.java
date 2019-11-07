@@ -40,6 +40,7 @@ public class Main {
         CocheRally cr= new CocheRally();
         cr.mostrarEstadoAntiguo();
         cr.mostrarEstado();
+        cr.avanzar();
     }
 
 }

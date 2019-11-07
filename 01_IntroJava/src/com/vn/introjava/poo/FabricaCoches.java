@@ -5,8 +5,6 @@
  */
 package com.vn.introjava.poo;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
-import java.util.logging.Logger;
 /**
  *
  * @author PC

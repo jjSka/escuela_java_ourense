@@ -6,11 +6,11 @@
 package com.vn.introjava.poo;
 
 
-/**
+/** no puede ser instanciada por falta de sentido
  *
  * @author PC
  */
-public class Vehiculo {
+public abstract class Vehiculo {  
     
     protected TipoVehiculo tipo;
 
@@ -21,6 +21,7 @@ public class Vehiculo {
     public void setTipo(TipoVehiculo tipo) {
         this.tipo = tipo;
     }
-    
+    public abstract void avanzar(); // ya lo implementaran los hijos
+    public abstract void mostrarEstado();
     
 }

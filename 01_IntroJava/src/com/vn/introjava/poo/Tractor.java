@@ -12,4 +12,20 @@ package com.vn.introjava.poo;
  */
 public class Tractor extends Vehiculo{
     
+    public Tractor(){
+        
+        tipo= TipoVehiculo.TRACTOR;
+    }
+    
+    @Override
+    public void avanzar(){
+        //System.out.println("Not supported yet in class "+Tractor.class);
+    }
+    
+    public void mostrarEstado(){
+         System.out.println("Tractor: "+getTipo());
+
+        
+    }
+    
 }

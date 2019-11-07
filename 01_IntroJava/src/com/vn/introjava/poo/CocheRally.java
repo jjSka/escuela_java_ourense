@@ -15,6 +15,37 @@ public class CocheRally extends Coche {
     private float rozamiento;
 
     /**
+     * constructor sin params
+     */
+    public CocheRally() {
+        super();
+        rozamiento= 5f;
+        tipo= TipoVehiculo.RALLY;
+    }
+    
+    /**
+     * constru con param marca
+     * @param marca 
+     */
+    public CocheRally(String marca) {
+        super(marca);
+        tipo= TipoVehiculo.RALLY;
+    }
+
+    
+    /**
+     * constru con rozamiento y marca
+     * @param rozamiento
+     * @param marca 
+     */
+    public CocheRally(float rozamiento, String marca) {
+        super(marca);
+        this.rozamiento = rozamiento;
+        tipo= TipoVehiculo.RALLY;
+    }
+
+    
+    /**
      * Get the value of rozamiento
      *
      * @return the value of rozamiento

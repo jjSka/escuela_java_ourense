@@ -20,12 +20,14 @@ public class Coche extends Vehiculo {
     public Coche() {
         numRuedas = 4;
         marca = "SIN MARCA";
+        tipo= TipoVehiculo.TURISMO;
     }
 
     public Coche(String marca) {
         numRuedas = 4;
         this.marca = marca;
         this.arrancado = false;
+        tipo= TipoVehiculo.TURISMO;
     }
 
     public void arrancar() {
@@ -86,4 +88,7 @@ public class Coche extends Vehiculo {
         return arrancado;
     }
 
+    public void avanzar(){
+        //System.out.println("Not supported yet in class "+Coche.class);
+    }
 }
