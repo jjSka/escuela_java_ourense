@@ -10,7 +10,7 @@ package com.vn.introjava.poo;
  * @author PC
  */
 public class Coche extends Object {
-    
+
     private int numRuedas = 4;
     private String marca;
     private boolean arrancado;
@@ -21,29 +21,40 @@ public class Coche extends Object {
         numRuedas = 4;
         marca = "SIN MARCA";
     }
+
     public Coche(String marca) {
         numRuedas = 4;
         this.marca = marca;
+        this.arrancado = false;
     }
-    
+
     public void arrancar() {
         System.out.println(this.marca + " ha arrancado.");
         arrancado = true;
     }
 
     // Sobrecarga de método arrancar()
+     /** Si la posicion de la llave es 4, arranca. si no, no arranca.
+     * 
+     * @param posicionLlave
+     * @return si se ha arrancado devuelve true
+     */
     public void arrancar(int posicionLlave) {
         arrancado = posicionLlave == 4;// ? true: false;
         //if(posicionLlave==4) arrancado = true; else arrancado= false; (tb vale)
         System.out.println(this.marca + (arrancado ? " ha arrancado." : "fallo al arrancar"));
-        
+
     }
+
 
     public boolean arrancar(String orden) {
         arrancado = "arrancar".equals(orden);
         return arrancado;
     }
 
+    /**
+     * Simplemente muestra la marca y si está arrancado
+     */
     public void mostrarEstado() {
         System.out.println("Coche" + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar"));
     }
@@ -52,25 +63,25 @@ public class Coche extends Object {
     //CLEAN CODE: funciones no deben tener mas de 20 lineas de codigo.
     public String getMarca() {
         return this.marca;
-        
+
     }
 
-    public void setMarca(String marca) throws Exception{
+    public void setMarca(String marca) throws Exception {
         if (marca != null || "".equals(marca)) //cuando existe una variable local con el mismo nombre
         //obliga a usar this para acceder a la variable miembro
         {
             this.marca = marca;
-        }
-        else
+        } else {
             throw new IllegalArgumentException("debes asignar una marca.");
+        }
     }
-    
+
     public int getNumRuedas() {
         return numRuedas;
     }
-    
+
     public boolean isArrancado() {
         return arrancado;
     }
-    
+
 }

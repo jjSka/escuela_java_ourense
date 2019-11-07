@@ -6,6 +6,7 @@
 package com.vn.introjava.tests.poo;
 
 import com.vn.introjava.poo.Coche;
+import com.vn.introjava.poo.FabricaCoches;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -75,5 +76,16 @@ public class OperacionesBasicasObjetos {
         
         miCocheFindes.arrancar(3);
         assertEquals(miCocheFindes.isArrancado(),false);
+    }
+    
+    @Test 
+    public void usandoConstructoresSobrecargados(){
+        Coche c= new Coche("Ferrari");
+        assertEquals(c.getMarca(), "Ferrari");
+    }
+    
+    @Test(expected= IllegalArgumentException.class)
+    public void gestionExcepciones() throws Exception{
+        Coche c = FabricaCoches.crear("");
     }
 }
