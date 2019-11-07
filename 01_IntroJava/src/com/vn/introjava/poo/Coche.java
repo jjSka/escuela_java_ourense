@@ -60,7 +60,7 @@ public class Coche extends Vehiculo {
      * Simplemente muestra la marca y si está arrancado
      */
     public void mostrarEstado() {
-        System.out.println("Coche" + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar"));
+        System.out.println(tipo+" -  " + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar"));
     }
     //utilizar getter cuando puede llevar logica extra en vez del atributo.
 
@@ -90,5 +90,10 @@ public class Coche extends Vehiculo {
 
     public void avanzar(){
         //System.out.println("Not supported yet in class "+Coche.class);
+    }
+    
+    @Override
+    public String toString(){
+        return super.toString()+tipo+" -  " + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar");
     }
 }

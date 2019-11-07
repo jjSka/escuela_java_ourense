@@ -29,7 +29,7 @@ public class OperacionesHerencia {
         supra = new CocheRally();
     }
 
-    @Test
+    //@Test
     public void testSobreescrituraMetodos() throws Exception {
         supra.setMarca("Toyota");
         supra.setRozamiento(7f);
@@ -42,7 +42,7 @@ public class OperacionesHerencia {
         supra.mostrarEstado();
     }
 
-    @Test
+   // @Test
     public void testPolimorfismo() {
 
         supra.setRozamiento(15f);
@@ -54,7 +54,7 @@ public class OperacionesHerencia {
 
     }
 
-    @Test
+    //@Test
     public void testEnumerado() {
         supra.setTipo(TipoVehiculo.TURISMO);
         System.out.println(" Tipo: " + supra.getTipo().toString());
@@ -84,7 +84,7 @@ public class OperacionesHerencia {
             subaru
         };
         for(Vehiculo vehiculo: misVehiculos){
-            System.out.println(vehiculo.getTipo());
+           // System.out.println(vehiculo.getTipo());
            // vehiculo.avanzar();
             vehiculo.mostrarEstado();
         }
