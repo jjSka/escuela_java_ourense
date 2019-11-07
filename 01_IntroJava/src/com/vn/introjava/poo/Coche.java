@@ -9,7 +9,7 @@ package com.vn.introjava.poo;
  *
  * @author PC
  */
-public class Coche extends Object {
+public class Coche extends Vehiculo {
 
     private int numRuedas = 4;
     private String marca;
