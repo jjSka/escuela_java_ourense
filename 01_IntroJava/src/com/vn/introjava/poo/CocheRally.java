@@ -80,13 +80,7 @@ public class CocheRally extends Coche {
         super.mostrarEstado();
         System.out.println("  Rozamiento: " + getRozamiento());
     }
-    
-    @Override
-    public void mostrarEstado() {
-       
-        System.out.println(this.toString());
-
-    }
+ 
     
     @Override
     public String toString(){

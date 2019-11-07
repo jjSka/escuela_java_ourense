@@ -22,6 +22,8 @@ public abstract class Vehiculo {
         this.tipo = tipo;
     }
     public abstract void avanzar(); // ya lo implementaran los hijos
-    public abstract void mostrarEstado();
+    public void mostrarEstado(){
+         System.out.println(this.toString());
+    }
     
 }

@@ -22,10 +22,7 @@ public class Tractor extends Vehiculo{
         //System.out.println("Not supported yet in class "+Tractor.class);
     }
     
-    @Override
-    public void mostrarEstado(){
-         System.out.println(this.toString());
-    }
+    
     
     @Override
     public String toString(){
