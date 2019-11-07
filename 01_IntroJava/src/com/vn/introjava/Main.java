@@ -7,6 +7,7 @@ package com.vn.introjava;
 
 import static com.vn.introjava.funcionesbasicas.Ordenamiento.*;
 import com.vn.introjava.poo.Coche;
+import com.vn.introjava.poo.CocheRally;
 import com.vn.introjava.poo.FabricaCoches;
 
 /**
@@ -32,10 +33,13 @@ public class Main {
         int x=a!=4?Integer.MAX_VALUE:Integer.MIN_VALUE;
          System.out.println(x);
         ordenarPorSeleccion(new int[]{1,3,4,5});*/
-        Coche c = FabricaCoches.crear("Seat en main");
+        /*Coche c = FabricaCoches.crear("Seat en main");
         c.mostrarEstado();
         c = FabricaCoches.crear(null);
-        c.mostrarEstado();
+        c.mostrarEstado();*/
+        CocheRally cr= new CocheRally();
+        cr.mostrarEstado();
+        cr.mostrarEstadoAntiguo();
     }
 
 }

@@ -34,18 +34,20 @@ public class Coche extends Object {
     }
 
     // Sobrecarga de método arrancar()
-     /** Si la posicion de la llave es 4, arranca. si no, no arranca.
+
+    /**arrancar con posicion llave valida. si no falla.
      * 
-     * @param posicionLlave
-     * @return si se ha arrancado devuelve true
+     * @param posicionLlave uno a 4
      */
     public void arrancar(int posicionLlave) {
+        if (posicionLlave < 1 || posicionLlave > 4) {
+            throw new IllegalArgumentException("se pasa de rango");
+        }
         arrancado = posicionLlave == 4;// ? true: false;
         //if(posicionLlave==4) arrancado = true; else arrancado= false; (tb vale)
         System.out.println(this.marca + (arrancado ? " ha arrancado." : "fallo al arrancar"));
 
     }
-
 
     public boolean arrancar(String orden) {
         arrancado = "arrancar".equals(orden);

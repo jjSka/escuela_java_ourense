@@ -6,6 +6,7 @@
 package com.vn.introjava.tests.poo;
 
 import com.vn.introjava.poo.Coche;
+import com.vn.introjava.poo.CocheRally;
 import com.vn.introjava.poo.FabricaCoches;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -87,5 +88,18 @@ public class OperacionesBasicasObjetos {
     @Test(expected= IllegalArgumentException.class)
     public void gestionExcepciones() throws Exception{
         Coche c = FabricaCoches.crear("");
+    }
+    @Test
+    public void testSobreescrituraMetodos() throws Exception{
+        CocheRally supra= new CocheRally();
+        supra.setMarca("Toyota");
+        supra.setRozamiento(7f);
+        assertTrue(supra.getRozamiento()== 7f);
+        assertTrue(supra.arrancar("arrancar"));
+        // Usando TDD TEST DRIVEN DEVELOPMENT
+        assertTrue(supra.arrancar("ARRANCAR"));
+        assertTrue(supra.arrancar("ENCENDER"));
+        
+        
     }
 }
