@@ -89,17 +89,6 @@ public class OperacionesBasicasObjetos {
     public void gestionExcepciones() throws Exception{
         Coche c = FabricaCoches.crear("");
     }
-    @Test
-    public void testSobreescrituraMetodos() throws Exception{
-        CocheRally supra= new CocheRally();
-        supra.setMarca("Toyota");
-        supra.setRozamiento(7f);
-        assertTrue(supra.getRozamiento()== 7f);
-        assertTrue(supra.arrancar("arrancar"));
-        // Usando TDD TEST DRIVEN DEVELOPMENT
-        assertTrue(supra.arrancar("ARRANCAR"));
-        assertTrue(supra.arrancar("ENCENDER"));
-        
-        
-    }
+
+
 }

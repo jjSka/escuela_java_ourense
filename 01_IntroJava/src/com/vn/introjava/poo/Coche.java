@@ -13,7 +13,7 @@ public class Coche extends Object {
 
     private int numRuedas = 4;
     private String marca;
-    private boolean arrancado;
+    protected boolean arrancado;
 
     //En el momento que creamos un constructor, el de por defecto
     //Deja de ser implementado por Java

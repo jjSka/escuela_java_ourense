@@ -38,8 +38,8 @@ public class Main {
         c = FabricaCoches.crear(null);
         c.mostrarEstado();*/
         CocheRally cr= new CocheRally();
-        cr.mostrarEstado();
         cr.mostrarEstadoAntiguo();
+        cr.mostrarEstado();
     }
 
 }
