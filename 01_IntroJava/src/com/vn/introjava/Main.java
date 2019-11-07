@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package com.vn.introjava;
+
 import static com.vn.introjava.funcionesbasicas.Ordenamiento.*;
+import com.vn.introjava.poo.Coche;
+import com.vn.introjava.poo.FabricaCoches;
 
 /**
  * Clase Principal del proyecto Ejemplos Java
@@ -25,11 +28,14 @@ public class Main {
         EstructurasControl.ejecutarCondiciones();
         DatosBasicos.probarOperadores();
         ordenarArray();*/
-        int a=4;
+ /*int a=4;
         int x=a!=4?Integer.MAX_VALUE:Integer.MIN_VALUE;
          System.out.println(x);
-        ordenarPorSeleccion(new int[]{1,3,4,5});
+        ordenarPorSeleccion(new int[]{1,3,4,5});*/
+        Coche c = FabricaCoches.crear("Seat en main");
+        c.mostrarEstado();
+        c = FabricaCoches.crear(null);
+        c.mostrarEstado();
     }
-    
 
 }

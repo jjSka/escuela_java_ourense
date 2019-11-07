@@ -13,16 +13,64 @@ public class Coche extends Object {
     
     private int numRuedas = 4;
     private String marca;
+    private boolean arrancado;
+
+    //En el momento que creamos un constructor, el de por defecto
+    //Deja de ser implementado por Java
+    public Coche() {
+        numRuedas = 4;
+        marca = "SIN MARCA";
+    }
+    public Coche(String marca) {
+        numRuedas = 4;
+        this.marca = marca;
+    }
     
-    
-    public String getMarca(){
+    public void arrancar() {
+        System.out.println(this.marca + " ha arrancado.");
+        arrancado = true;
+    }
+
+    // Sobrecarga de método arrancar()
+    public void arrancar(int posicionLlave) {
+        arrancado = posicionLlave == 4;// ? true: false;
+        //if(posicionLlave==4) arrancado = true; else arrancado= false; (tb vale)
+        System.out.println(this.marca + (arrancado ? " ha arrancado." : "fallo al arrancar"));
+        
+    }
+
+    public boolean arrancar(String orden) {
+        arrancado = "arrancar".equals(orden);
+        return arrancado;
+    }
+
+    public void mostrarEstado() {
+        System.out.println("Coche" + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar"));
+    }
+    //utilizar getter cuando puede llevar logica extra en vez del atributo.
+
+    //CLEAN CODE: funciones no deben tener mas de 20 lineas de codigo.
+    public String getMarca() {
         return this.marca;
         
     }
-    public void setMarca(String marca){
-        //cuando existe una variable local con el mismo nombre
+
+    public void setMarca(String marca) throws Exception{
+        if (marca != null || "".equals(marca)) //cuando existe una variable local con el mismo nombre
         //obliga a usar this para acceder a la variable miembro
-        this.marca= marca;
+        {
+            this.marca = marca;
+        }
+        else
+            throw new IllegalArgumentException("debes asignar una marca.");
+    }
+    
+    public int getNumRuedas() {
+        return numRuedas;
+    }
+    
+    public boolean isArrancado() {
+        return arrancado;
     }
     
 }
