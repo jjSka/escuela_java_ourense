@@ -21,7 +21,11 @@ public class Tractor extends Vehiculo{
     public void avanzar(){
         //System.out.println("Not supported yet in class "+Tractor.class);
     }
-    
+
+    @Override
+    public void mover(float metros){
+        System.out.println("El monopatin se mueve");
+    }
     
     
     @Override

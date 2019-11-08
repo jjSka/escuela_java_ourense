@@ -5,12 +5,14 @@
  */
 package com.vn.introjava.poo;
 
+import com.vn.interfaces.Desplazable;
+
 
 /** no puede ser instanciada por falta de sentido
  *
  * @author PC
  */
-public abstract class Vehiculo {  
+public abstract class Vehiculo implements Desplazable{  
     
     protected TipoVehiculo tipo;
 
