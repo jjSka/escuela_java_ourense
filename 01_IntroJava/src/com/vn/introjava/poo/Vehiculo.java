@@ -5,7 +5,7 @@
  */
 package com.vn.introjava.poo;
 
-import com.vn.interfaces.Desplazable;
+import com.vn.introjava.interfaces.Desplazable;
 
 
 /** no puede ser instanciada por falta de sentido

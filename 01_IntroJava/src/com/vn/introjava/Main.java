@@ -6,7 +6,7 @@
 package com.vn.introjava;
 
 import com.sun.istack.internal.logging.Logger;
-import com.vn.excepciones.UsoNormalExcepciones;
+import com.vn.introjava.excepciones.UsoNormalExcepciones;
 import static com.vn.introjava.funcionesbasicas.Ordenamiento.*;
 import com.vn.introjava.poo.Coche;
 import com.vn.introjava.poo.CocheRally;

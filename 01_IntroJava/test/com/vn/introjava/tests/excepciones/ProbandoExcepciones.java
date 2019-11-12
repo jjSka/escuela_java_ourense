@@ -5,7 +5,7 @@
  */
 package com.vn.introjava.tests.excepciones;
 
-import com.vn.excepciones.UsoNormalExcepciones;
+import com.vn.introjava.excepciones.UsoNormalExcepciones;
 import java.util.Arrays;
 import org.junit.Test;
 import static org.junit.Assert.*;

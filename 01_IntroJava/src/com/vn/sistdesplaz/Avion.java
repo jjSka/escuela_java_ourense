@@ -5,7 +5,7 @@
  */
 package com.vn.sistdesplaz;
 
-import com.vn.interfaces.Desplazable;
+import com.vn.introjava.interfaces.Desplazable;
 
 /**
  *

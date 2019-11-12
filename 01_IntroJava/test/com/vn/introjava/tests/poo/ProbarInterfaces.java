@@ -5,8 +5,8 @@
  */
 package com.vn.introjava.tests.poo;
 
-import com.vn.interfaces.Desplazable;
-import com.vn.interfaces.Electrico;
+import com.vn.introjava.interfaces.Desplazable;
+import com.vn.introjava.interfaces.Electrico;
 import com.vn.introjava.poo.*;
 import com.vn.sistdesplaz.Avion;
 import com.vn.sistdesplaz.BicicletaElectrica;
