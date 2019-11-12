@@ -28,7 +28,7 @@ public class TractorSingleton extends Tractor{
         return tractorUnico;
     }
 
-    public String getMarca() {
+    private String getMarca() {
         return marca;
     }
 
