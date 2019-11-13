@@ -8,6 +8,7 @@ package com.vn.introjava.tests.dao;
 import com.vn.introjava.dao.DaoCocheList;
 import com.vn.introjava.dao.DaoCocheMap;
 import com.vn.introjava.dao.IDaoCoche;
+import com.vn.introjava.poo.Coche;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -42,7 +43,7 @@ public class TestDaoCocheSimple {
     }
     
     void testInterfaceDaoCoche(IDaoCoche daoCoche)throws Exception{
-                DaoCocheList dcl= new DaoCocheList();
+        DaoCocheList dcl= new DaoCocheList();
         dcl.crear("Seat");
         dcl.crear("Mazda");
         dcl.crear("Fiat");
@@ -59,6 +60,11 @@ public class TestDaoCocheSimple {
         dcm.obtenerPorMarca("Volkwswagen");
         assertEquals(dcm.obtenerPorMarca("BMW").getMarca(), "BMW");
         assertEquals(dcm.obtenerPorIndex(2).getMarca(), "Seat");
+        
+        Coche modificar= new Coche("Ahora Citroen");
+        daoCoche.modificar(1, modificar);
+        System.out.println(modificar.getMarca());
+        
     }
     @Test
     public void testDaoCocheMap() throws Exception{

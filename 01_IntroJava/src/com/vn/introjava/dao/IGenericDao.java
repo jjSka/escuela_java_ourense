@@ -14,6 +14,7 @@ public interface IGenericDao<T> {
     void crear(T objeto)throws Exception;
     T obtenerPorIndex(int index);
     void modificar(int index, T objetoDatosNuevos) throws Exception;
+    void borrar(int index);
     
     
     

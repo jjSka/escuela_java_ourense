@@ -55,6 +55,12 @@ public class DaoUsuarioList implements IDaoUsuario{
         listaUsuarios.get(index).setNombre(objetoDatosNuevos.getNombre());
         listaUsuarios.get(index).setEdad(objetoDatosNuevos.getEdad());
     } 
+    
+
+    @Override
+    public void borrar(int index){
+        listaUsuarios.remove(index);        
+    }
 
 
 }

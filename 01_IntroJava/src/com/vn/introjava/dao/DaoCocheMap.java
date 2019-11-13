@@ -58,6 +58,13 @@ public class DaoCocheMap implements IDaoCoche{
         @Override
     public void modificar(int index, Coche objetoDatosNuevos)throws Exception{
         mapaCoches.get(index).setMarca(objetoDatosNuevos.getMarca());
+        mapaCoches.get(index).setTipo(objetoDatosNuevos.getTipo());
+        mapaCoches.get(index).arrancar(objetoDatosNuevos.isArrancado() ? 4 : 1);
         
+        
+    }    
+   @Override
+    public void borrar(int index){
+        //mapaCoches.repl;        
     } 
 }

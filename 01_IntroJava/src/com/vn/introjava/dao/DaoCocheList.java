@@ -32,6 +32,7 @@ public class DaoCocheList implements IDaoCoche{
         return listaCoches.get(index);
     }
 
+    @Override
     public Coche obtenerPorMarca(String marca) {
         for (Coche coche : listaCoches) {
             if (coche.getMarca().equals(marca)) {
@@ -43,6 +44,13 @@ public class DaoCocheList implements IDaoCoche{
         @Override
     public void modificar(int index, Coche objetoDatosNuevos)throws Exception{
         listaCoches.get(index).setMarca(objetoDatosNuevos.getMarca());
+        listaCoches.get(index).setTipo(objetoDatosNuevos.getTipo());
+        listaCoches.get(index).arrancar(objetoDatosNuevos.isArrancado() ? 4 : 1);
         
     } 
+    
+   @Override
+    public void borrar(int index){
+        listaCoches.remove(index);        
+    }
 }
