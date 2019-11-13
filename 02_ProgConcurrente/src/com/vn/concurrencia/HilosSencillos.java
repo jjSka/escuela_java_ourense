@@ -12,6 +12,7 @@ package com.vn.concurrencia;
 public class HilosSencillos {
 
     static int contCompartido = 0;
+    static int nThreads=20;
     HiloA hiloA;
     HiloB hiloB;
 
@@ -23,7 +24,7 @@ public class HilosSencillos {
 
         @Override
         public void run() {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 125; i++) {
                 contCompartido++;
                 System.out.println("Instruccion A:     " + i + " - contador = " + contCompartido);
             }
@@ -34,7 +35,7 @@ public class HilosSencillos {
 
         @Override
         public void run() {
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 125; j++) {
                 contCompartido++;
                 System.out.println("Ins B:   " + j + " - contador = " + contCompartido);
             }
@@ -59,5 +60,23 @@ public class HilosSencillos {
         t.run();
         t2.run();     
         System.out.println("Esto es fin de run");  
+    }
+    
+    public void ejecutarArrayHilos(){
+        int contador=0;
+        Thread[] arrayThreads= new Thread[nThreads];
+        System.out.println("Esto es start");
+        for (int i = 0; i < arrayThreads.length; i++) {
+            arrayThreads[i]=new Thread(hiloB);
+            arrayThreads[i].start();    
+            arrayThreads[i]=new Thread(hiloA);   
+            arrayThreads[i].start();
+            if(arrayThreads[i].isAlive())
+                contador++;
+            
+        }
+        
+        System.out.println("Esto es fin de start");
+        
     }
 }
