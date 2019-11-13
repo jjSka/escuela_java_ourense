@@ -61,22 +61,28 @@ public class TestDaoCocheSimple {
         assertEquals(dcm.obtenerPorMarca("BMW").getMarca(), "BMW");
         assertEquals(dcm.obtenerPorIndex(2).getMarca(), "Seat");
         
-        Coche modificar= new Coche("Ahora Citroen");
+        /*Coche modificar= new Coche("Ahora Citroen");
         daoCoche.modificar(1, modificar);
         System.out.println(modificar.getMarca());
         
         modificar.arrancar();
         daoCoche.modificar(2,modificar);
-        assertEquals(modificar.isArrancado(),modificar.isArrancado());
+        assertEquals(modificar.isArrancado(),modificar.isArrancado());*/
+        
+        daoCoche.crear(new Coche("Seat"));
+        daoCoche.crear(new Coche("Mazda"));
         
         daoCoche.borrar(1);
-        daoCoche.borrar(daoCoche.obtenerPorMarca("Coche A"));
-        if(daoCoche instanceof DaoCocheList)
+        daoCoche.borrar(daoCoche.obtenerPorMarca("Seat"));
+        /*if(daoCoche instanceof DaoCocheList)
             assertEquals("Coche C",daoCoche.obtenerPorIndex(0));
+        */
+        
+        assertNull(daoCoche.obtenerPorIndex(1));
         
     }
     @Test
     public void testDaoCocheMap() throws Exception{
-        testInterfaceDaoCoche(new DaoCocheMap());
+        testInterfaceDaoCoche(new DaoCocheList());
     }
 }

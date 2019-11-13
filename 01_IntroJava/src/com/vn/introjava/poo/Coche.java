@@ -101,4 +101,15 @@ public class Coche extends Vehiculo {
     public String toString(){
         return super.toString()+tipo+" -  " + getMarca() + ", " + (arrancado ? " ha arrancado." : "fallo al arrancar");
     }
+    
+    @Override
+    public boolean equals(Object otroCoche){
+        if(otroCoche instanceof Coche){
+            Coche c = (Coche) otroCoche;
+            if(this.getMarca().equals(c.getMarca()))
+                return true;
+        }
+        return false;
+        
+    }
 }
