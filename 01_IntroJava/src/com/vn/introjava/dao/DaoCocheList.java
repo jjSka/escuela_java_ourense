@@ -53,4 +53,9 @@ public class DaoCocheList implements IDaoCoche{
     public void borrar(int index){
         listaCoches.remove(index);        
     }
+    
+   @Override
+    public void borrar(Coche c){
+        listaCoches.remove(c);        
+    }    
 }

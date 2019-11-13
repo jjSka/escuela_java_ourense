@@ -65,6 +65,15 @@ public class TestDaoCocheSimple {
         daoCoche.modificar(1, modificar);
         System.out.println(modificar.getMarca());
         
+        modificar.arrancar();
+        daoCoche.modificar(2,modificar);
+        assertEquals(modificar.isArrancado(),modificar.isArrancado());
+        
+        daoCoche.borrar(1);
+        daoCoche.borrar(daoCoche.obtenerPorMarca("Coche A"));
+        if(daoCoche instanceof DaoCocheList)
+            assertEquals("Coche C",daoCoche.obtenerPorIndex(0));
+        
     }
     @Test
     public void testDaoCocheMap() throws Exception{

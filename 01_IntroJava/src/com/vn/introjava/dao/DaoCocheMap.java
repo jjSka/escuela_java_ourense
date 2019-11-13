@@ -66,5 +66,9 @@ public class DaoCocheMap implements IDaoCoche{
    @Override
     public void borrar(int index){
         //mapaCoches.repl;        
+    }
+    @Override
+    public void borrar(Coche c){
+        //mapaCoches.repl;        
     } 
 }

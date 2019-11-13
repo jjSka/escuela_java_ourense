@@ -61,6 +61,10 @@ public class DaoUsuarioList implements IDaoUsuario{
     public void borrar(int index){
         listaUsuarios.remove(index);        
     }
-
+ 
+    @Override
+    public void borrar(Usuario u){
+        listaUsuarios.remove(u);        
+    }
 
 }
