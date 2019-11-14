@@ -5,6 +5,8 @@
  */
 package com.vn.concurrencia;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author PC
@@ -12,19 +14,20 @@ package com.vn.concurrencia;
 public class HilosSencillos {
 
     static int contCompartido = 0;
-    static int nThreads=20;
+    static int nThreads = 2;
     HiloA hiloA;
     HiloB hiloB;
 
-    public HilosSencillos(){
+    public HilosSencillos() {
         this.hiloA = new HiloA();
         this.hiloB = new HiloB();
     }
+
     class HiloA implements Runnable {
 
         @Override
         public void run() {
-            for (int i = 0; i < 125; i++) {
+            for (int i = 0; i < 1000; i++) {
                 contCompartido++;
                 System.out.println("Instruccion A:     " + i + " - contador = " + contCompartido);
             }
@@ -35,7 +38,7 @@ public class HilosSencillos {
 
         @Override
         public void run() {
-            for (int j = 0; j < 125; j++) {
+            for (int j = 0; j < 1000; j++) {
                 contCompartido++;
                 System.out.println("Ins B:   " + j + " - contador = " + contCompartido);
             }
@@ -49,34 +52,40 @@ public class HilosSencillos {
         //t.run();
         t.start();
         t2.start();
-        while(t.isAlive() || t2.isAlive());
+        while (t.isAlive() || t2.isAlive());
         System.out.println("Esto es fin de start");
     }
-    public void ejecutarHilosRunAB(){//en serie
+
+    public void ejecutarHilosRunAB() {//en serie
         System.out.println("Esto es  run");
         Thread t = new Thread(hiloA);
         Thread t2 = new Thread(hiloB);
         //t.run();
         t.run();
-        t2.run();     
-        System.out.println("Esto es fin de run");  
+        t2.run();
+        System.out.println("Esto es fin de run");
     }
-    
-    public void ejecutarArrayHilos(){
-        int contador=0;
-        Thread[] arrayThreads= new Thread[nThreads];
+
+    public void ejecutarArrayHilos() {
+        ArrayList<Thread> arrayThreads = new ArrayList<>();
         System.out.println("Esto es start");
-        for (int i = 0; i < arrayThreads.length; i++) {
-            arrayThreads[i]=new Thread(hiloB);
-            arrayThreads[i].start();    
-            arrayThreads[i]=new Thread(hiloA);   
-            arrayThreads[i].start();
-            if(arrayThreads[i].isAlive())
-                contador++;
-            
+        for (int i = 0; i < nThreads; i++) {
+            arrayThreads.add(new Thread(hiloA));
+            arrayThreads.add(new Thread(hiloB));
         }
-        
-        System.out.println("Esto es fin de start");
-        
+        for (Thread thread : arrayThreads) {
+            thread.start();
+        }
+        int contador = 0;
+        do {
+            contador = 0;
+            for (int i = 0; i < arrayThreads.size(); i++) {
+                if (arrayThreads.get(i).isAlive()) 
+                    contador++;
+            }
+        } while (contador > 0);
+        System.out.println(
+                "Esto es fin de start");
+
     }
 }
