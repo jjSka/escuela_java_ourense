@@ -1,0 +1,31 @@
+* {
+    margin: 8px;
+    padding: 0px;
+}
+h1{
+    background-color: steelblue;
+}
+body {
+    background-color: springgreen;
+}
+
+ul {
+    margin: 20px;
+    background-color: crimson;
+}
+.azul-chillon{
+    background-color: blue;
+}
+#enlace-menu, #enlace-css{
+    color: red;
+}
+a:hover{
+    font-size: 30px;
+    color: blue;
+}
+.elemento-menu{
+    display: flex;
+}
+.marco-colocado{
+    display:block;
+}
