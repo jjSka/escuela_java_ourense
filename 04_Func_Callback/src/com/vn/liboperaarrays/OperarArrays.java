@@ -13,17 +13,18 @@ public class OperarArrays {
     
     @FunctionalInterface
     public interface FunCallBackOperarArrays{
-        double operar(double x,double y);
+        Object operar(Object x,Object y);
     }
 
-    public static double[] operarArrays(double[] x, double[] y, FunCallBackOperarArrays operaCallBack) {
-        double[] arrayResult = null;
+    public static Object[] operarArrays(Object[] x, Object[] y, FunCallBackOperarArrays operaCallBack) {
+        Object[] arrayResult = null;
         if (x.length == y.length) {
-            arrayResult = new double[x.length];
+            arrayResult = new Object[x.length];
             for (int i = 0; i < x.length; i++) {
                 arrayResult[i]= operaCallBack.operar(x[i],y[i]);
             }
         }
         return arrayResult;
     }
+    
 }

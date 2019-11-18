@@ -19,33 +19,35 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double[] array_A = {1, 2, 3, 4, 5};
-        double[] array_B = {2, 3, 4, 5, 6};
-        double[] arraySumaAB = OperarArrays.operarArrays(array_A, array_B, Main::suma);
+        Object[] array_A = {1, 2, 3, 4, 5};
+        Object[] array_B = {2, 3, 4, 5, 6};
+        Object[] arraySumaAB = OperarArrays.operarArrays(array_A, array_B, Main::suma);
         mostrar(System.out, arraySumaAB);
-        OperarArrays.FunCallBackOperarArrays divide = (double x, double y) -> {
+        /*OperarArrays.FunCallBackOperarArrays divide = (Object x, Object y) -> {
             return x/y;
         };
-        double[] arrayDivAB = OperarArrays.operarArrays(array_A, array_B, (double x, double y)->{
+        double[] arrayDivAB = OperarArrays.operarArrays(array_A, array_B, (Object x, Object y)->{
             return x/y;
         });
-        mostrar(System.out, arrayDivAB);
+        mostrar(System.out, arrayDivAB);*/
        /* OperarArrays.FunCallBackOperarArrays resta = (double x, double y) -> {
             return x/y;
-        };     */   
+        };     */  
+       
+       
     }
 
-    public static double suma(double x, double y) {
-        return x + y;
+    public static double suma(Object x, Object y) {
+        return (Double)x + (Double)y;
     }
     public static double divide(double x, double y) {
         return x / y;
     }    
 
-    public static void mostrar(PrintStream salida, double[] a) {
+    public static void mostrar(PrintStream salida, Object[] a) {
         String tabla = "<table border=2><tr>";
         for (int i = 0; i < a.length; i++) {
-            final double element = a[i];
+            final Object element = a[i];
             tabla += "<td>&nbsp; " + element + " &nbsp;</td>\n";
         }
         salida.println(tabla + "</tr></table>");
