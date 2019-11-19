@@ -19,8 +19,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Object[] array_A = {1, 2, 3, 4, 5};
-        Object[] array_B = {2, 3, 4, 5, 6};
+        Object[] array_A = {new Double(1),new Double(2),new Double(3),new Double(4),new Double(5)};
+        Object[] array_B = {new Double(2),new Double(3),new Double(4),new Double(5),new Double(6)};
         Object[] arraySumaAB = OperarArrays.operarArrays(array_A, array_B, Main::suma);
         mostrar(System.out, arraySumaAB);
         /*OperarArrays.FunCallBackOperarArrays divide = (Object x, Object y) -> {
@@ -37,10 +37,10 @@ public class Main {
        
     }
 
-    public static double suma(Object x, Object y) {
+    public static Object suma(Object x, Object y) {
         return (Double)x + (Double)y;
     }
-    public static double divide(double x, double y) {
+    public static Object divide(double x, double y) {
         return x / y;
     }    
 

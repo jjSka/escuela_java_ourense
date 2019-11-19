@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="componente_eventos">
+        <label>Evento con Listener</label>
+        <input id="input_listo" />
+        <input type="button" id="btn_listo" />
+        <br />
+        <div id="info_evento"></div>
+        <label>Evento2 con Listener</label>
+        <input id="input2_listo" />
+        <input type="button" id="btn2_listo" />
+        <br />
+        <div id="info2_evento"></div>
+    </div>
+    <script>
+        function GestorEventos(input, boton, divInfo) {
+            this.input = input;
+            this.boton = boton;
+            this.divInfo = divInfo;
+            this.funCallbackPulsar= (evento) =>{
+                this.input.value += "bastante bien " + evento.type;
+                this.divInfo.innerHTML = JSON.stringify(evento);
+                this.divInfo.innerHTML += "id target del evento: " + this.boton.id;
+                this.boton.value = "Puedes repetir";
+                this.divInfo.className = "div-marco";
+                this.boton.removeEventListener("click", this.funCallbackPulsar);
+            }
+            this.boton.addEventListener("click", this.funCallbackPulsar);
+
+
+        }
+        let input_listo = document.getElementById("input_listo");
+        let btn_listo = document.getElementById("btn_listo");
+        let input2_listo = document.getElementById("input2_listo");
+        let btn2_listo = document.getElementById("btn2_listo");
+        btn_listo.value = "Pulsa,listill@";
+        btn2_listo.value = "Pulsa,listill@ 2";
+        var gE = new GestorEventos(input_listo, btn_listo, info_evento);
+        var gE2 = new GestorEventos(input2_listo, btn2_listo, info2_evento);
+
+        /*function funCallbackPulsar(evento) {
+            evento.currentTarget.value = "bastante bien " + evento.type;
+            let info_evento = document.getElementById("info_evento");
+            info_evento.innerHTML = JSON.stringify(evento);
+            info_evento.innerHTML += "id target del evento: " + evento.currentTarget.id;
+            evento.currentTarget.value = "Puedes repetir";
+            info_evento.className = "div-marco";
+            //btn_listo.removeEventListener("click", funCallbackPulsar);
+        }
+        function funCallbackPulsarDos(evento) {
+            document.getElementsByTagName("body")[0].className = "fondo-body";
+
+        }*/
+
+    </script>
+    <style>
+        .div-marco {
+            border: blue solid;
+            background-color: lightgrey;
+        }
+
+        .fondo-body {
+            background-color: lightgreen;
+        }
+    </style>
+</body>
+
+</html>
