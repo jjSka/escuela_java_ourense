@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="componente_eventos">
+        <label>Evento con Listener</label>
+        <input id="input_listo" />
+        <input type="button" id="btn_listo" />
+        <br />
+        <div id="info_evento"></div>
+        <label>Evento2 con Listener</label>
+        <input id="input2_listo" />
+        <input type="button" id="btn2_listo" />
+        <br />
+        <div id="info2_evento"></div>
+        <br/>
+        <div onclick="alert('Llamada evento desde html');">
+            Zona onclick="alert();"
+        </div>
+        <div id="quiereOnClick">
+            Zona elemDOM.onclick=function (..) {
+                ...
+            }
+        </div>
+    </div>
+    <script src="js/09_eventos_class.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            let gestorEv = new GestorEventosES6("input_listo", "btn_listo", "info_evento");
+            let gestorEv2 = new GestorEventosES6("input2_listo", "btn2_listo", "info2_evento");
+        });   
+    </script>
+    <style>
+        .div-marco {
+            border: blue solid;
+            background-color: lightgrey;
+        }
+
+        .fondo-body {
+            background-color: lightgreen;
+        }
+    </style>
+</body>
+
+</html>
