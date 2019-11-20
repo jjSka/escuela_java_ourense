@@ -49,6 +49,13 @@ a:hover {
     width: 400px;
 }
 
+.enlace-articulo{
+    padding: 1em;
+    margin: 1em;
+    background-color: antiquewhite;
+    float: right;
+}
+
 /* Media queries, condiciones para seleccionar qué 
     etilos se aplican a qué dispositivos */
 .articulo {border: black solid;}
