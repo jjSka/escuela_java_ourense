@@ -68,16 +68,19 @@ public class ServletJson extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String nombre = request.getParameter("nombre");
+        String email = request.getParameter("email");
         response.setContentType("application/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             DatosPersona dp= new DatosPersona();
-            dp.setNombre("Nombre desde Gson");
-            dp.setEmail("datos@pojo.com");
+            dp.setNombre("Nombre desde Gson: "+ nombre.toUpperCase());
+            dp.setEmail("Email: "+ email.toLowerCase());
             dp.setFibonacci(new int[]{1,1,2,3,5,8,13});
             Gson gson = new Gson();
             String datosJSON = gson.toJson(dp);
             out.println(datosJSON);
-        }
+        }  
     }
 
     /**

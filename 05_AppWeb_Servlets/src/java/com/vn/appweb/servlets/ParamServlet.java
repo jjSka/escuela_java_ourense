@@ -7,6 +7,12 @@ package com.vn.appweb.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,9 +62,9 @@ public class ParamServlet extends HttpServlet {
             out.println("<h1>Servlet ParamServlet at " + request.getContextPath() + "</h1>");
             out.println("<form name='formDatos' action='./formulario' method='POST'>");
             out.println("<label>Nombre: </label>");
-            out.println("<input type='text' id='nombre_campo' name='nombre_campo'/>");
+            out.println("<input type='text' required='required' id='nombre_campo' name='nombre_campo'/>");
             out.println("<label>Email: </label>");
-            out.println("<input type='email' id='email_campo' name='email_campo'/>");
+            out.println("<input type='email' required='required' id='email_campo' name='email_campo'/>");
             out.println("<input type='submit' value='Envia parametro'/>");
             out.println("</form>");
             out.println("</body>");
@@ -104,8 +110,33 @@ public class ParamServlet extends HttpServlet {
             } else {
                 out.println("<p style='color: green; font-size: 40px;'>Nombre_campo: " + emailCampo.toLowerCase() + ".</p>");
             }
+            
+            // Vamos a insertar los datos recibidos
+            //jdbc:derby://localhost:1527/db_prueba
+            
+            try{
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+            } catch (Exception ex) {
+                 Logger.getLogger(ParamServlet.class.getName()).log(Level.SEVERE, null, ex);
+                 out.println("<p style='color: red'>No se ha cargado DerbyDB</p>");
+            }
+            try(Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/db_prueba",
+                    "root", "1234")){
+                String sqlQuery="INSERT INTO persona (nombre,email) VALUES ('" + valorCampo + "','" + emailCampo + "')";
+                Statement sentencia= con.createStatement();
+                sentencia.executeUpdate(sqlQuery);
+                
+                
+            } catch(SQLException ex){
+                out.println("<p style='color: red'>Error SQL: " + ex.getMessage() + "</p> ");
+                Logger.getLogger(ParamServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
             out.println("</body>");
             out.println("</html>");
+            
+            
+            
         }
         
     }
