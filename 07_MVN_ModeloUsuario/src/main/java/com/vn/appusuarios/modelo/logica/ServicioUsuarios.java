@@ -56,7 +56,7 @@ public class ServicioUsuarios {
                 try {
                     int iEdad = Integer.parseInt(edad);
                     if (iEdad >= 12) {
-                        if (validarEmailNombre(email, nombre)) {                            
+                        if (validarEmailNombre(email, nombre)) {                           
                             Usuario usuario = new Usuario(-1, email, password, nombre, iEdad);
                             return usuario;
                         } else {
