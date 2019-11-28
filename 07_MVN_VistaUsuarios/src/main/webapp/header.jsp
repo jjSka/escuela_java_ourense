@@ -3,14 +3,11 @@
     Created on : 21-feb-2019, 20:43:31
     Author     : IEUser
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.vn.appusuarios.modelo.Usuario"%>
 <%
-// Usuario usuario = (Usuario) session.getAttribute("usuario");%>
+ Usuario usuario = (Usuario) session.getAttribute("usuario");%>
 <c:catch var="excepcionUsuario"></c:catch>
-<jsp:useBean id="usuario" type="com.vn.appusuarios.modelo.Usuario" scope="session">
-	<jsp:getProperty property="*" name="usuario"></jsp:getProperty>
-</jsp:useBean>
+
 
 <header>
     <h2>Aplicación Gestión MVC JSP</h2>

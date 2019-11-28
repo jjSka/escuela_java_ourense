@@ -4,6 +4,7 @@
     Author     : IEUser
 --%>
 <%@page import="com.vn.appusuarios.modelo.Usuario"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.vn.appusuarios.modelo.logica.ServicioUsuarios"%>
 <%@include file="head.jsp" %>
 <%@include file="header.jsp" %>
@@ -34,6 +35,8 @@
 		Password:
 		<%=usuario.getPassword()%>
 
+		<!-- 	Id: <c:out value="${ usuario.id }"/>
+			Nombre: <c:out value="${ usuario.nombre }"/>-->
 	</h2>
 </body>
 </html>

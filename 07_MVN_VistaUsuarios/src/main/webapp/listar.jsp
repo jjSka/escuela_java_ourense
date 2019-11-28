@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="java.util.ArrayList"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.vn.appusuarios.modelo.Usuario"%>
 <%@page import="com.vn.appusuarios.modelo.logica.ServicioUsuarios"%>
 <%@include file="head.jsp"%>

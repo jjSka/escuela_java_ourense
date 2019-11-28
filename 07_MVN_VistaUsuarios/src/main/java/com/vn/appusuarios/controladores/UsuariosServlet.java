@@ -68,6 +68,11 @@ public class UsuariosServlet extends HttpServlet {
             }
 
         }
+        else if (request.getMethod() == "GET") {
+        	Usuario usuario= srvUsu.leerUno(email);
+        	request.getSession().setAttribute("usuario", usuario);
+            request.getRequestDispatcher("header.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
