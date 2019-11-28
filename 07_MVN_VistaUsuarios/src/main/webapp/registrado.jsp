@@ -6,9 +6,9 @@
 <%@page import="com.vn.appusuarios.modelo.Usuario"%>
 <%@page import="com.vn.appusuarios.modelo.logica.ServicioUsuarios"%>
 <%@include file="head.jsp" %>
+<%@include file="header.jsp" %>
 <%
-	ServicioUsuarios servicioU = (ServicioUsuarios) request.getAttribute("servicioUsu");
-	Usuario usuario = (Usuario) session.getAttribute("usuario");
+	//ServicioUsuarios servicioU = (ServicioUsuarios) request.getAttribute("servicioUsu");
 %>
 <html>
 <%=head()%>
