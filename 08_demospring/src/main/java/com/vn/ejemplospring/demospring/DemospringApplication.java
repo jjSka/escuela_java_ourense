@@ -8,6 +8,8 @@ public class DemospringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemospringApplication.class, args);
+		System.out.println(">>> Aplicacion arrancada.");
+		System.out.println(">>> A robar se _HA dicho!");
 	}
 
 }
