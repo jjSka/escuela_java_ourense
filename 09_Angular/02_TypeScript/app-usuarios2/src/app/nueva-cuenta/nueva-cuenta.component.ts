@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class NuevaCuentaComponent implements OnInit {
 
-  cuenta: CuentaBanc
+  cuenta: CuentaBanc;
+  recibido: boolean;
   constructor(private srvCuentasRest: CuentasRestService) { }
 
   ngOnInit() {
@@ -21,8 +22,8 @@ export class NuevaCuentaComponent implements OnInit {
     observador = this.srvCuentasRest.add(this.cuenta);
     observador.subscribe((objeto) => {
       console.log("Datos: " + objeto["iban"] + objeto["id"]);
+      this.recibido=true;
     });
-    this.cuenta.dni = "3434";
     console.log(this.cuenta.toString());
   }
 

@@ -1,0 +1,25 @@
+<p>lista-cuentas works!</p>
+<table class="tabla">
+    <thead>
+        <th>
+            ID
+        </th>
+        <th>
+            IBAN
+        </th>
+        <th>
+            DNI
+        </th>
+    </thead>
+    <tr *ngFor="let cuenta of arrayCuentas">
+        <td>{{cuenta.id}}
+            101
+        </td>
+        <td>{{cuenta.iban}}
+            ES0000
+        </td>
+        <td>{{cuenta.dni}}
+            9999-X
+        </td>
+    </tr>
+</table>
